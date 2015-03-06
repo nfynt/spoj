@@ -1,0 +1,35 @@
+    # include <stdio.h>
+     
+    int main()
+    {
+    unsigned int cases,top=0,i;
+    char exp[400],stack[200];
+    scanf("%ul",&cases);
+    while(cases)
+    {
+    scanf("%s",exp);
+    printf("\n");
+    for(i=0;exp[i];i++)
+    {
+    if(exp[i]=='(')
+    continue;
+    else if(exp[i]==')')
+    {
+    printf("%c",stack[top]);
+    top--;
+    }
+    else if(exp[i]=='+' || exp[i]=='-' || exp[i]=='*' || exp[i]=='/' || exp[i]=='^')
+    {
+    top++;
+    stack[top]=exp[i];
+    }
+    else
+    {
+    printf("%c",exp[i]);
+    }
+    }
+    cases--;
+    }
+    return 0;
+    } 
+
